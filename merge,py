@@ -1,0 +1,32 @@
+import os, glob
+import pandas as pd
+
+path = './bj/'
+all_files = glob.glob(os.path.join(path, "*.csv"))
+df_from_each_file = [pd.read_csv(f, sep=',', dtype = object) for f in all_files]
+df_merged  = pd.concat(df_from_each_file, ignore_index=True)
+df_merged.to_csv( "bj.csv", index=False)
+
+path = './sh/'
+all_files = glob.glob(os.path.join(path, "*.csv"))
+df_from_each_file = [pd.read_csv(f, sep=',', dtype = object) for f in all_files]
+df_merged  = pd.concat(df_from_each_file, ignore_index=True)
+df_merged.to_csv( "sh.csv", index=False)
+
+path = './gz/'
+all_files = glob.glob(os.path.join(path, "*.csv"))
+df_from_each_file = [pd.read_csv(f, sep=',', dtype = object) for f in all_files]
+df_merged  = pd.concat(df_from_each_file, ignore_index=True)
+df_merged.to_csv( "gz.csv", index=False)
+
+path = './sz/'
+all_files = glob.glob(os.path.join(path, "*.csv"))
+df_from_each_file = [pd.read_csv(f, sep=',', dtype = object) for f in all_files]
+df_merged  = pd.concat(df_from_each_file, ignore_index=True)
+df_merged.to_csv( "sz.csv", index=False)
+
+path = './gl/'
+all_files = glob.glob(os.path.join(path, "*.csv"))
+df_from_each_file = [pd.read_csv(f, sep=',', dtype = object) for f in all_files]
+df_merged  = pd.concat(df_from_each_file, ignore_index=True)
+df_merged.to_csv( "gl.csv", index=False)
